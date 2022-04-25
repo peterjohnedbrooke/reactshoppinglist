@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    // min-width: 300px;
+    position: absolute;
+    flex-direction: row;
+}
+
+.buttonList {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    left: 20%;
+
+    li {
+        list-style-type: none;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+
+    .mainButton {
+        height: 80px;
+        width: 80px;
+        padding: 10px;
+        border-radius: 50%;
+        border: none;
+        background-color: aliceblue;
+        color: rgb(42, 42, 42);
+        font-size: larger;
+    }
+    .mainButton:hover {
+        background-color: aquamarine;
+    }
+}

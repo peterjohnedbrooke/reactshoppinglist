@@ -1,0 +1,48 @@
+.inputWrapper {
+    position: relative;
+    // width: 200px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-evenly;
+    // top: 6%;
+    // left: 15%;
+
+    .inputBox {
+        border-radius: 50px;
+        // height: 30px;
+        width: 12vw;
+        border: none;
+        font-size: 10px;
+        padding: 10px;
+    }
+    button {
+        border-radius: 15px;
+        height: 30px;
+        padding: 10px;
+        border: none;
+        background-color: aliceblue;
+        font-size: 10px;
+    }
+}
+
+
+@media screen and (max-width: 680px)  {
+    .inputWrapper {
+        padding: 0px;
+
+        .inputBox {
+            font-size: 5px;
+            // width: 15vh;
+            height: 8px;
+            padding: 7px;
+        }
+        button {
+            height: 25px;
+            width: 25px;
+            font-size: 8px;
+            padding: 3px;
+        }
+    }
+}
+
