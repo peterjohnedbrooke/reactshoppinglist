@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/peterjohnedbrooke/reactshoppinglist.git/static/css/main.073c9b0a.css",
-    "main.js": "/peterjohnedbrooke/reactshoppinglist.git/static/js/main.97e11df6.js",
-    "static/js/787.4177f587.chunk.js": "/peterjohnedbrooke/reactshoppinglist.git/static/js/787.4177f587.chunk.js",
-    "static/media/logo.svg": "/peterjohnedbrooke/reactshoppinglist.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/peterjohnedbrooke/reactshoppinglist.git/index.html",
-    "main.073c9b0a.css.map": "/peterjohnedbrooke/reactshoppinglist.git/static/css/main.073c9b0a.css.map",
-    "main.97e11df6.js.map": "/peterjohnedbrooke/reactshoppinglist.git/static/js/main.97e11df6.js.map",
-    "787.4177f587.chunk.js.map": "/peterjohnedbrooke/reactshoppinglist.git/static/js/787.4177f587.chunk.js.map"
+    "main.css": "/reactshoppinglist/static/css/main.073c9b0a.css",
+    "main.js": "/reactshoppinglist/static/js/main.c3f1c516.js",
+    "static/js/787.4177f587.chunk.js": "/reactshoppinglist/static/js/787.4177f587.chunk.js",
+    "static/media/logo.svg": "/reactshoppinglist/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/reactshoppinglist/index.html",
+    "main.073c9b0a.css.map": "/reactshoppinglist/static/css/main.073c9b0a.css.map",
+    "main.c3f1c516.js.map": "/reactshoppinglist/static/js/main.c3f1c516.js.map",
+    "787.4177f587.chunk.js.map": "/reactshoppinglist/static/js/787.4177f587.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.97e11df6.js"
+    "static/js/main.c3f1c516.js"
   ]
 }
