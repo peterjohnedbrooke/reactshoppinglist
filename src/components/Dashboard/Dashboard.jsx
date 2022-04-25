@@ -27,12 +27,29 @@ const Dashboard = () => {
  
 
   const [savedList, setSavedList] = useState([
-    
+    {
+      newItem: "cheese",
+      isSelected: false,
+    },
+    {
+      newItem: "bacon",
+      isSelected: false,
+    },
+    {
+      newItem: "bread",
+      isSelected: false,
+    },
+    {
+      newItem: "eggs",
+      isSelected: false,
+    },
+    {
+      newItem: "colin the caterpiller",
+      isSelected: false,
+    }
   ])
 
-  const [allSavedLists, setAllSavedLists] = useState([{
-    
-  }])
+  const [allSavedLists, setAllSavedLists] = useState([])
 
   const [newItem, setNewItem] = useState('');
   const [previousItem, setPreviousItem] = useState('');
@@ -130,6 +147,7 @@ const Dashboard = () => {
     const newClearList = [...clearList]
     setCurrentList(newClearList);
     const loadFromSave = [...allSavedLists];
+    // loadFromSave[index];
     console.log(loadFromSave[index])
     setIsOpen(false)
     setCurrentList(loadFromSave[index])
@@ -199,7 +217,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-        <SavedLists handleEdit={handleEdit} allSavedLists={allSavedLists} handleLoad={handleLoad} isOpen={isOpen} handleRemoveSelected={handleRemoveSelected} handleSaveList={handleSaveList} handleDeleteList={handleDeleteList} handleOpen={handleOpen}></SavedLists>
+        <SavedLists savedList={savedList} handleEdit={handleEdit} allSavedLists={allSavedLists} handleLoad={handleLoad} isOpen={isOpen} handleRemoveSelected={handleRemoveSelected} handleSaveList={handleSaveList} handleDeleteList={handleDeleteList} handleOpen={handleOpen}></SavedLists>
         </div>
       </div>
     </div>
