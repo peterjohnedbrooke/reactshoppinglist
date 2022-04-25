@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk, faEraser, faTrashCan, faFolder } from '@fortawesome/free-solid-svg-icons';
 
 const CurrentSelectors = (props) => {
-  const { handleRemoveSelected, handleSaveList, handleDeleteList, handleOpen} = props;  
+  const { handleRemoveSelected, handleSaveList, handleDeleteList, handleOpen, handleEdit} = props;  
   return (
     <>
         <ul className={styles.buttonList}>
@@ -28,6 +28,11 @@ const CurrentSelectors = (props) => {
                 <FontAwesomeIcon icon={faFolder} />
                 </button>
             </li>
+            {/* <li>
+                <button className={styles.mainButton} onClick={handleEdit}>save edit?
+                <FontAwesomeIcon icon={faFolder} />
+                </button>
+            </li> */}
         </ul>
     </>
   )

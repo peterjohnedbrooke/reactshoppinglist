@@ -5,7 +5,7 @@ import { faCheck, faFlag} from '@fortawesome/free-solid-svg-icons';
 import Input from './Input/Input';
 
 const Current = (props) => {
-  const {currentList, handleSelect, highPriority, handleAdd, newItem, handleChange} = props;
+  const {currentList, handleSelect, highPriority, handleAdd, newItem, handleChange, handleEditChange} = props;
 
   return (
       <div className={styles.currentWrapper}>
@@ -15,7 +15,7 @@ const Current = (props) => {
             <ul>
             { currentList.length > 0 ? // added as it was trying to read isSelected when repopulating arrays 
               currentList.map((item, index) => (
-                <li onClick={() => handleSelect(index)} key={item.newItem} className={ item.isSelected ? styles.selected : styles.unSelect}>
+                <li onClick={() => handleSelect(index)} suppressContentEditableWarning={true} contentEditable={true} onInput={handleEditChange} key={item.newItem} className={ item.isSelected ? styles.selected : styles.unSelect}>
                     {item.newItem}
                     {
                       item.isSelected ? 

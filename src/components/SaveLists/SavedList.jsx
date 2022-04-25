@@ -3,20 +3,21 @@ import styles from "./SavedLists.module.scss"
 import CurrentSelectors from '../CurrentSelectors';
 
 const SavedLists = (props) => {
-  const { allSavedLists, handleLoad, isOpen, handleRemoveSelected, handleSaveList, handleDeleteList, handleOpen} = props;  
+  const { allSavedLists, handleLoad, isOpen, handleRemoveSelected, handleSaveList, handleDeleteList, handleOpen, handleEdit} = props;  
   return (
-    <div className={styles.container}>
       <div className={ isOpen ? styles.isOpen : styles.isClosed}>
-          <ul>
-          <h2>Saved</h2>
-              {allSavedLists.map((item, index) =>(
-                  <li onClick={() => handleLoad(index)} className={styles.shoppingLists}> Shopping List #1 {item.length}</li>
-              ))}
-
+          <ul className={styles.container}>
+                <h2>Saved</h2>
+                {allSavedLists.map((item, index) =>(
+                    <li onClick={() => handleLoad(index)} className={styles.shoppingLists}> Shopping List # {item.length}
+                    
+                    </li>
+                    // add in a unique numbering system from each new saved list
+                ))}
           </ul>
-          <CurrentSelectors handleRemoveSelected={handleRemoveSelected} handleSaveList={handleSaveList} handleDeleteList={handleDeleteList} handleOpen={handleOpen}></CurrentSelectors>
+          <CurrentSelectors handleEdit={handleEdit} handleRemoveSelected={handleRemoveSelected} handleSaveList={handleSaveList} handleDeleteList={handleDeleteList} handleOpen={handleOpen}></CurrentSelectors>
       </div>
-    </div>
+    
   )
 }
 
