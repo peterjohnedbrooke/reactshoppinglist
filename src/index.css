@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0px;
   /* font-family: 'Montserrat', sans-serif !important; */
-  font-family: 'Ubuntu', sans-serif !important;
+  /* font-family: 'Ubuntu', sans-serif !important; */
+  font-family: 'Quicksand', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
