@@ -10,7 +10,7 @@ const SavedLists = (props) => {
                 <h2>Saved</h2>
                 {allSavedLists.length > 0 ? 
                     allSavedLists.map((item, index) => (
-                        <li onClick={() => handleLoad(index)} className={styles.shoppingLists}> Shopping List # {item.length}</li>
+                        <li onClick={() => handleLoad(index)} className={styles.shoppingLists}> Shopping List # {`${index + 1}`}</li>
                         // add in a unique numbering system from each new saved list
                     ))
                     :
