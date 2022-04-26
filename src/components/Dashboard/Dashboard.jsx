@@ -108,20 +108,19 @@ const Dashboard = () => {
   
   const handleSelect = (index) => { 
     const newCurrentList = [...currentList];
-    const newClearList = [...clearList]
     const filterSelected = newCurrentList.filter(item => item.isSelected === true);
     const indexFilterSelected = newCurrentList.indexOf(filterSelected)
     console.log(indexFilterSelected.length)
     if ( filterSelected.length > 0) {
       const filtered = newCurrentList.find(item => item.isSelected === true);
       const indexOfSelected = newCurrentList.indexOf(filtered)
-      newCurrentList[indexOfSelected].isSelected = !newCurrentList[indexOfSelected].isSelected;
       newCurrentList[index].isSelected = !newCurrentList[index].isSelected;
-      setCurrentList([...newClearList,...newCurrentList])
+      newCurrentList[indexOfSelected].isSelected = !newCurrentList[indexOfSelected].isSelected;
+      setCurrentList(newCurrentList)
     }
      else {
       newCurrentList[index].isSelected = !newCurrentList[index].isSelected;
-      setCurrentList([...newClearList,...newCurrentList])
+      setCurrentList(newCurrentList)
     }
   }
 
