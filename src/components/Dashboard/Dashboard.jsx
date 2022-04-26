@@ -10,7 +10,9 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [counter, setCounter] = useState(0);
   const clearList = [];
-  const [currentList, setCurrentList] = useState([]);
+  const [currentList, setCurrentList] = useState([
+    
+  ]);
   const [highPriority, setHightPriority] = useState(false);
   const [isSelected, setIsSelected] = useState([])
 
@@ -105,18 +107,22 @@ const Dashboard = () => {
   
   
   const handleSelect = (index) => { 
-    const newCurrenList = [...currentList];
-    const newIsSelected = [...isSelected]
-    // const checkSelected = newCurrenList.filter(item => (item, item.isSelected === true))
-    // console.log(checkSelected)
-    // if (checkSelected.length > 0) {
-    //   Object.keys(checkSelected).forEach(key => {
-    //     checkSelected[key] = false;
-    //   })
-    // } else {
-    newCurrenList[index].isSelected = !newCurrenList[index].isSelected;
-    setCurrentList(newCurrenList)
-    
+    const newCurrentList = [...currentList];
+    const newClearList = [...clearList]
+    const filterSelected = newCurrentList.filter(item => item.isSelected === true);
+    const indexFilterSelected = newCurrentList.indexOf(filterSelected)
+    console.log(indexFilterSelected.length)
+    if ( filterSelected.length > 0) {
+      const filtered = newCurrentList.find(item => item.isSelected === true);
+      const indexOfSelected = newCurrentList.indexOf(filtered)
+      newCurrentList[indexOfSelected].isSelected = !newCurrentList[indexOfSelected].isSelected;
+      newCurrentList[index].isSelected = !newCurrentList[index].isSelected;
+      setCurrentList([...newClearList,...newCurrentList])
+    }
+     else {
+      newCurrentList[index].isSelected = !newCurrentList[index].isSelected;
+      setCurrentList([...newClearList,...newCurrentList])
+    }
   }
 
   const handlePreviousSelect = (index) => { 
@@ -207,8 +213,7 @@ const Dashboard = () => {
     if (newIndex <= -1) {
       return
     } else {
-    const f = newCurrentList.splice(index, 1)[0];
-    newCurrentList.splice(newIndex, 0, f);
+    newCurrentList.splice(newIndex, 0, newCurrentList.splice(index, 1)[0]);
     setCurrentList([...newCurrentList])
     }
   }

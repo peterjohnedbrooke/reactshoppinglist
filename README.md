@@ -33,9 +33,12 @@ https://stackoverflow.com/questions/48385283/how-to-delete-object-from-array-usi
 24/04/2022 - 2hrs 
 Made it relatively responsive and styled up a bit. Needs a complete redesign but as a starting point looks acceptable. In hindsight I should have implemented bootstrap for the project but will need to familiarise myself with it further. There is a bug involving the loading of shopping lists from the saved lists aswell as the fact it only loads the last saved list which needs fixing. Lots of validation to add on almost all functions, have made notes on functions to add. 
 
-26/04/22 - Spent 3 extra hours today trying to complete the functionailty of the the app as I would like to fully finish the project. Add load functionality and move selected list items up and down the current list. The last thing that needs doing in terms of functionailty is fixing the handleSelect to turn any objects with the value isSelected: true to false when selecting a new item. This is so that moving selected items up and down the list is properly functional. I also need to look into editing items on current list, ( this will most likely involve editing the innerHTML onInput, splicing out the selected item  and splicing in the new item)
+26/04/22 - Spent 3 extra hours today trying to complete the functionailty of the the app as I would like to fully finish the project. Add load functionality and move selected list items up and down the current list. The last important thing that needs doing in terms of functionailty is fixing the handleSelect to turn any objects with the value isSelected: true to false when selecting a new item. This is so that moving selected items up and down the list is properly functional. I also need to look into editing items on current list
 I also need to give each savedlist a unique key, or more preferably save the name as todays date, or let the user edit themselves. 
+Also need to add validation so no duplicate items are added to a list 
 
+
+https://stackoverflow.com/questions/51462062/loop-through-array-of-objects-check-for-a-matching-parameter-and-add-the-matchi
 Top Priorities to complete - Saved Lists feature fix, up and down functionality on current, UI design improvements 
 
 Tickets- 
