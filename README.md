@@ -5,7 +5,7 @@ Use of Google Fonts
 Quick way of changing box shadow with this box shadow generator (nice and old school) https://html-css-js.com/css/generator/box-shadow/
 some ideas regarding UI https://dribbble.com/shots/14775121-Gronik-Grocery-Shop-Mobile-App/attachments/6480244?mode=media
 I used FontAwesome for the various icons on the page - https://fontawesome.com/ 
-
+https://stackoverflow.com/questions/5306680/move-an-array-element-from-one-array-position-to-another
 
 Time Keeping Log
 20/04/22 - 1hrs
@@ -32,6 +32,9 @@ https://stackoverflow.com/questions/48385283/how-to-delete-object-from-array-usi
 
 24/04/2022 - 2hrs 
 Made it relatively responsive and styled up a bit. Needs a complete redesign but as a starting point looks acceptable. In hindsight I should have implemented bootstrap for the project but will need to familiarise myself with it further. There is a bug involving the loading of shopping lists from the saved lists aswell as the fact it only loads the last saved list which needs fixing. Lots of validation to add on almost all functions, have made notes on functions to add. 
+
+26/04/22 - Spent 3 extra hours today trying to complete the functionailty of the the app as I would like to fully finish the project. Add load functionality and move selected list items up and down the current list. The last thing that needs doing in terms of functionailty is fixing the handleSelect to turn any objects with the value isSelected: true to false when selecting a new item. This is so that moving selected items up and down the list is properly functional. I also need to look into editing items on current list, ( this will most likely involve editing the innerHTML onInput, splicing out the selected item  and splicing in the new item)
+I also need to give each savedlist a unique key, or more preferably save the name as todays date, or let the user edit themselves. 
 
 Top Priorities to complete - Saved Lists feature fix, up and down functionality on current, UI design improvements 
 

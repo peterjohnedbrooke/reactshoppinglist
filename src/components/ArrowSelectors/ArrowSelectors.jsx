@@ -20,16 +20,16 @@ const ArrowSelectors = (props) => {
             <FontAwesomeIcon icon={faArrowLeft}/>
           </button>
         </li>
-        {/* <li>
-          <button onClick={handleMoveUp}>
+        <li>
+          <button className={styles.up} onClick={handleMoveUp}>
             <FontAwesomeIcon icon={faArrowUp}/>
           </button>
         </li>
         <li>
-          <button onClick={handleMoveDown}>
+          <button className={styles.down} onClick={handleMoveDown}>
             <FontAwesomeIcon icon={faArrowDown}/>
           </button>
-        </li> */}
+        </li>
       </ul>
     </div>
   )

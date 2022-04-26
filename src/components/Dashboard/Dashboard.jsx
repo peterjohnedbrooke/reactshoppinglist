@@ -9,9 +9,10 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
   const [counter, setCounter] = useState(0);
-  const clearList = []
+  const clearList = [];
   const [currentList, setCurrentList] = useState([]);
   const [highPriority, setHightPriority] = useState(false);
+  const [isSelected, setIsSelected] = useState([])
 
   const [previousList, setPreviousList] = useState([
     { 
@@ -92,7 +93,6 @@ const Dashboard = () => {
     }
     // catch duplicate words 
     const newProduct = {
-      id: 1,
       newItem: newItem, 
       isSelected: false,
       isPrevious: false,
@@ -100,13 +100,23 @@ const Dashboard = () => {
     const newProducts = [...currentList, newProduct]; 
     setCurrentList(newProducts)
     setNewItem('')
+    console.log(newProducts)
   }
   
   
   const handleSelect = (index) => { 
     const newCurrenList = [...currentList];
-    newCurrenList[index].isSelected = !newCurrenList[index].isSelected
+    const newIsSelected = [...isSelected]
+    // const checkSelected = newCurrenList.filter(item => (item, item.isSelected === true))
+    // console.log(checkSelected)
+    // if (checkSelected.length > 0) {
+    //   Object.keys(checkSelected).forEach(key => {
+    //     checkSelected[key] = false;
+    //   })
+    // } else {
+    newCurrenList[index].isSelected = !newCurrenList[index].isSelected;
     setCurrentList(newCurrenList)
+    
   }
 
   const handlePreviousSelect = (index) => { 
@@ -154,7 +164,7 @@ const Dashboard = () => {
   }
 
   const handleOpen = () => {
-    setIsOpen(true);
+    setIsOpen(!isOpen);
   }
 
   const handleMoveRight = () => {
@@ -191,18 +201,29 @@ const Dashboard = () => {
 
   const handleMoveUp = () => {
     const newCurrentList = [...currentList]
-    const newClearList = [...clearList];
-    const selectedItem = newCurrentList.filter(item => item.isSelected === true)
-    console.log(selectedItem)
-    const notSelected = newCurrentList.filter(item => item.isSelected === false)
+    const selectedItem = newCurrentList.find(item => item.isSelected === true)
+    const index = newCurrentList.indexOf(selectedItem)
+    const newIndex = index - 1;
+    if (newIndex <= -1) {
+      return
+    } else {
+    const f = newCurrentList.splice(index, 1)[0];
+    newCurrentList.splice(newIndex, 0, f);
+    setCurrentList([...newCurrentList])
+    }
   }
 
   const handleMoveDown = () => {
     const newCurrentList = [...currentList]
-    const newClearList = [...clearList];
-    const selectedItem = newCurrentList.filter(item => item.isSelected === true)
-    const notSelected = newCurrentList.filter(item => item.isSelected === false)
-    // newCurrentList.insertBefore(selectedItem, notSelected)
+    const selectedItem = newCurrentList.find(item => item.isSelected === true)
+    const index = newCurrentList.indexOf(selectedItem)
+    const newIndex = index +1;
+   if (newIndex <= newCurrentList + 1) {
+      return
+    } else {
+    newCurrentList.splice(newIndex, 0, newCurrentList.splice(index, 1)[0]);
+    setCurrentList([...newCurrentList])
+    }
   }
 
   return (

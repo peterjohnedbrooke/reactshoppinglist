@@ -12,10 +12,11 @@ const Current = (props) => {
         <div className={styles.listContainer}>
             <h2>Current</h2>
             <Input handleAdd={handleAdd} newItem={newItem} handleChange={handleChange}></Input>
+            {/* suppressContentEditableWarning={true} contentEditable={true} onInput={handleEditChange} */}
             <ul>
             { currentList.length > 0 ? // added as it was trying to read isSelected when repopulating arrays 
               currentList.map((item, index) => (
-                <li onClick={() => handleSelect(index)} suppressContentEditableWarning={true} contentEditable={true} onInput={handleEditChange} key={item.newItem} className={ item.isSelected ? styles.selected : styles.unSelect}>
+                <li onClick={() => handleSelect(index)} key={index} id={index} className={ item.isSelected ? styles.selected : styles.unSelect}>
                     {item.newItem}
                     {
                       item.isSelected ? 
